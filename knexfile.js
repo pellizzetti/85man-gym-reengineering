@@ -1,7 +1,5 @@
 require('dotenv').config();
 
-// const pg = require('pg');
-
 module.exports = {
   client: process.env.DATABASE_CLIENT,
   connection: {
