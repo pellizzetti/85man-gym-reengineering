@@ -6,6 +6,7 @@
   "author": "Guilherme Pellizzetti <guipellizzetti@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-async-handler": "^1.1.4",
