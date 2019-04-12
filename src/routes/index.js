@@ -5,7 +5,7 @@ const router = express.Router();
 
 const { PersonController } = require('../app/controllers');
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.json({ status: 'UP' });
 });
 
