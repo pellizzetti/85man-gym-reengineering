@@ -1,4 +1,4 @@
-const Person = require('./Person');
-const PersonQuiz = require('./PersonQuiz');
+const Student = require('./Student');
+const StudentQuiz = require('./StudentQuiz');
 
-module.exports = { Person, PersonQuiz };
+module.exports = { Student, StudentQuiz };

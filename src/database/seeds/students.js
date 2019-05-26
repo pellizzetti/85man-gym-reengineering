@@ -2,7 +2,7 @@ const faker = require('faker');
 
 faker.locale = 'pt_BR';
 
-const tableName = 'persons';
+const tableName = 'students';
 
 async function createDummyData(knex) {
   await knex(tableName).del();
@@ -14,7 +14,7 @@ async function createDummyData(knex) {
     persons.push({
       name: faker.name.findName(),
       birthday: faker.date.between('1945-01-01', '2000-12-31'),
-      gender: faker.random.arrayElement(['F', 'M']),
+      gender: faker.random.arrayElement(['Feminino', 'Masculino']),
       active: faker.random.boolean(),
       phone: faker.phone.phoneNumberFormat(),
       cellphone: faker.phone.phoneNumberFormat(),

@@ -1,3 +1,3 @@
-const PersonController = require('./PersonController');
+const StudentController = require('./StudentController');
 
-module.exports = { PersonController };
+module.exports = { StudentController };
