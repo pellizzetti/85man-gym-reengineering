@@ -10,5 +10,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/students', handle(StudentController.index));
+router.get('/students/:id', handle(StudentController.show));
+router.post('/students', handle(StudentController.store));
+router.put('/students/:id', handle(StudentController.update));
+router.delete('/students/:id', handle(StudentController.destroy));
 
 module.exports = router;
