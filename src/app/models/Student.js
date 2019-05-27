@@ -23,7 +23,7 @@ class Student extends Model {
       },
       referenced: {
         relation: Model.HasManyRelation,
-        modelClass: `${__dirname}/StudentQuiz`,
+        modelClass: `${__dirname}/Student`,
         join: {
           from: 'students.id',
           to: 'student_quiz.referral_id',
