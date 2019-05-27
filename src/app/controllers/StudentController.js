@@ -4,11 +4,16 @@ const { Student } = require('../models');
 
 class StudentController {
   async index(req, res) {
-    const { currentPage = 0 } = req.query;
+    const { currentPage = 0, showAll = false } = req.query;
 
-    const students = await Student.query()
-      .orderBy('name')
-      .page(currentPage, 10);
+    let students = [];
+    if (showAll) {
+      students = await Student.query().orderBy('name');
+    } else {
+      students = await Student.query()
+        .orderBy('name')
+        .page(currentPage, 10);
+    }
 
     return res.json(students);
   }
@@ -16,7 +21,9 @@ class StudentController {
   async show(req, res) {
     const { id } = req.params;
 
-    const student = await Student.query().findById(id);
+    const student = await Student.query()
+      .eager('quiz.referral')
+      .findById(id);
 
     student.birthday = student.birthday && moment(student.birthday, 'YYYY-MM-DD').format('DD/MM/YYYY');
 
@@ -26,7 +33,10 @@ class StudentController {
   async store(req, res) {
     const { values } = req.body;
 
-    const student = await Student.query().insert({ ...values });
+    const student = await Student.query().insertGraph(
+      { ...values },
+      { relate: true, noDelete: true },
+    );
 
     return res.json(student);
   }
@@ -39,7 +49,7 @@ class StudentController {
 
     const student = await Student.query()
       .findById(id)
-      .patch({ ...values });
+      .upsertGraph({ ...values }, { relate: true, noInsert: true, noDelete: true });
 
     return res.json(student);
   }
