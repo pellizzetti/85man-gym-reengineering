@@ -7,10 +7,10 @@ exports.up = (knex, Promise) => knex.schema.createTable('students', (table) => {
   table.text('phone');
   table.text('cellphone');
   table.text('email');
-  table.text('zipcode');
+  table.text('postal_code');
   table.text('street');
   table.text('number');
-  table.text('district');
+  table.text('neighborhood');
   table.text('city');
   table.text('state');
   table.timestamps(true, true);
