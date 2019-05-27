@@ -1,3 +1,3 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 docker exec -it api-gmv yarn knex seed:run
