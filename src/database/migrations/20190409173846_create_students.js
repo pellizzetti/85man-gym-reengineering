@@ -6,7 +6,7 @@ exports.up = (knex, Promise) => knex.schema.createTable('students', (table) => {
   table.boolean('active').defaultTo(true);
   table.text('phone');
   table.text('cellphone');
-  table.text('email');
+  table.text('email').unique();
   table.text('postal_code');
   table.text('street');
   table.text('number');
