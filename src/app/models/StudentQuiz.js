@@ -8,7 +8,7 @@ Model.knex(knexConnection);
 
 class StudentQuiz extends Model {
   static get tableName() {
-    return 'person_quiz';
+    return 'student_quiz';
   }
 
   static get relationMappings() {
@@ -18,7 +18,7 @@ class StudentQuiz extends Model {
         modelClass: `${__dirname}/Student`,
         join: {
           from: 'student_quiz.student_id',
-          to: 'student.id',
+          to: 'students.id',
         },
       },
       referral: {
