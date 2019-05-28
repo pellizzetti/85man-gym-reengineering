@@ -4,13 +4,16 @@ const { Product } = require('../models');
 
 class ProductController {
   async index(req, res) {
-    const { currentPage = 0, showAll = false } = req.query;
+    const { currentPage = 0, search = '', showAll = false } = req.query;
 
     let products = [];
     if (showAll) {
-      products = await Product.query().orderBy('name');
+      products = await Product.query()
+        .where('description', 'ILIKE', `%${search}%`)
+        .orderBy('description');
     } else {
       products = await Product.query()
+        .where('description', 'ILIKE', `%${search}%`)
         .orderBy('description')
         .page(currentPage, 10);
     }

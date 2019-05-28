@@ -4,13 +4,16 @@ const { Student } = require('../models');
 
 class StudentController {
   async index(req, res) {
-    const { currentPage = 0, showAll = false } = req.query;
+    const { currentPage = 0, search = '', showAll = false } = req.query;
 
     let students = [];
     if (showAll) {
-      students = await Student.query().orderBy('name');
+      students = await Student.query()
+        .where('name', 'ILIKE', `%${search}%`)
+        .orderBy('name');
     } else {
       students = await Student.query()
+        .where('name', 'ILIKE', `%${search}%`)
         .orderBy('name')
         .page(currentPage, 10);
     }
