@@ -1,3 +1,5 @@
 const StudentController = require('./StudentController');
 
-module.exports = { StudentController };
+const ProductController = require('./ProductController');
+
+module.exports = { StudentController, ProductController };
