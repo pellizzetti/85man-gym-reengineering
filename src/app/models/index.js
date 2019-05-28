@@ -3,4 +3,14 @@ const StudentQuiz = require('./StudentQuiz');
 
 const Product = require('./Product');
 
-module.exports = { Student, StudentQuiz, Product };
+const Instructor = require('./Instructor');
+
+const Activity = require('./Activity');
+
+module.exports = {
+  Student,
+  StudentQuiz,
+  Product,
+  Instructor,
+  Activity,
+};
