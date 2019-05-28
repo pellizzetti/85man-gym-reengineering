@@ -18,7 +18,7 @@ exports.up = (knex, Promise) => knex.schema.createTable('student_quiz', (table) 
     .references('id')
     .inTable('students')
     .onUpdate('CASCADE')
-    .onDelete('CASCADE');
+    .onDelete('SET NULL');
 });
 
 exports.down = (knex, Promise) => knex.schema.dropTable('student_quiz');

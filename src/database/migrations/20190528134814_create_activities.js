@@ -7,7 +7,7 @@
     .references('id')
     .inTable('instructors')
     .onUpdate('CASCADE')
-    .onDelete('CASCADE');
+    .onDelete('SET NULL');
   table.timestamps(true, true);
 });
 
