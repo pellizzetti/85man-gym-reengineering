@@ -8,6 +8,7 @@ const {
   ProductController,
   InstructorController,
   ActivityController,
+  EnrollmentController,
 } = require('../app/controllers');
 
 router.get('/', (req, res) => {
@@ -37,5 +38,11 @@ router.get('/activities/:id', handle(ActivityController.show));
 router.post('/activities', handle(ActivityController.store));
 router.put('/activities/:id', handle(ActivityController.update));
 router.delete('/activities/:id', handle(ActivityController.destroy));
+
+router.get('/enrollments', handle(EnrollmentController.index));
+router.get('/enrollments/:id', handle(EnrollmentController.show));
+router.post('/enrollments', handle(EnrollmentController.store));
+router.put('/enrollments/:id', handle(EnrollmentController.update));
+router.delete('/enrollments/:id', handle(EnrollmentController.destroy));
 
 module.exports = router;

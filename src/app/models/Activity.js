@@ -21,6 +21,18 @@ class Activity extends Model {
           to: 'instructors.id',
         },
       },
+      enrollments: {
+        relation: Model.ManyToManyRelation,
+        modelClass: `${__dirname}/Enrollment`,
+        join: {
+          from: 'activities.id',
+          through: {
+            from: 'enrollments_activities.activity_id',
+            to: 'enrollments_activities.enrollment_id',
+          },
+          to: 'enrollment.id',
+        },
+      },
     };
   }
 }

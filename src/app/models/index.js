@@ -7,10 +7,13 @@ const Instructor = require('./Instructor');
 
 const Activity = require('./Activity');
 
+const Enrollment = require('./Enrollment');
+
 module.exports = {
   Student,
   StudentQuiz,
   Product,
   Instructor,
   Activity,
+  Enrollment,
 };

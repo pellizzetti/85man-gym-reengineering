@@ -12,7 +12,7 @@ exports.up = (knex, Promise) => knex.schema.createTable('enrollments_activities'
     .inTable('activities')
     .onUpdate('CASCADE')
     .onDelete('CASCADE');
-  table.specificType('weekdays', 'integer[]').defaultTo('{}');
+  table.text('weekdays');
   table.time('starts_at');
   table.time('ends_at');
   table.timestamps(true, true);
