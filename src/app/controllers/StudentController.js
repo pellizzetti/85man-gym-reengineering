@@ -36,6 +36,8 @@ class StudentController {
   async store(req, res) {
     const { values } = req.body;
 
+    values.birthday = values.birthday && moment(values.birthday, 'DD/MM/YYYY').format('YYYY-MM-DD');
+
     const student = await Student.query().insertGraph(
       { ...values },
       { relate: true, noDelete: true },
