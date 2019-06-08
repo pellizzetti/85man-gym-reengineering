@@ -17,6 +17,7 @@ async function createDummyData(knex) {
       amount: faker.random.number({ min: 0, max: 1000, precision: 0.01 }),
     });
   }
+
   await knex(tableName).insert(products);
 }
 
