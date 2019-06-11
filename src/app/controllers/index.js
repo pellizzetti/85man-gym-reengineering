@@ -8,10 +8,13 @@ const ActivityController = require('./ActivityController');
 
 const EnrollmentController = require('./EnrollmentController');
 
+const OrderController = require('./OrderController');
+
 module.exports = {
   StudentController,
   ProductController,
   InstructorController,
   ActivityController,
   EnrollmentController,
+  OrderController,
 };

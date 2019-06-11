@@ -9,6 +9,8 @@ const Activity = require('./Activity');
 
 const Enrollment = require('./Enrollment');
 
+const Order = require('./Order');
+
 module.exports = {
   Student,
   StudentQuiz,
@@ -16,4 +18,5 @@ module.exports = {
   Instructor,
   Activity,
   Enrollment,
+  Order,
 };

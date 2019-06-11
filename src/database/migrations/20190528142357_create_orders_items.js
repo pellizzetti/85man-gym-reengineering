@@ -7,7 +7,7 @@ exports.up = (knex, Promise) => knex.schema.createTable('orders_items', (table) 
     .onUpdate('CASCADE')
     .onDelete('CASCADE');
   table
-    .integer('item_id')
+    .integer('product_id')
     .references('id')
     .inTable('products')
     .onUpdate('CASCADE')

@@ -9,6 +9,7 @@ const {
   InstructorController,
   ActivityController,
   EnrollmentController,
+  OrderController,
 } = require('../app/controllers');
 
 router.get('/', (req, res) => {
@@ -44,5 +45,11 @@ router.get('/enrollments/:id', handle(EnrollmentController.show));
 router.post('/enrollments', handle(EnrollmentController.store));
 router.put('/enrollments/:id', handle(EnrollmentController.update));
 router.delete('/enrollments/:id', handle(EnrollmentController.destroy));
+
+router.get('/orders', handle(OrderController.index));
+router.get('/orders/:id', handle(OrderController.show));
+router.post('/orders', handle(OrderController.store));
+router.put('/orders/:id', handle(OrderController.update));
+router.delete('/orders/:id', handle(OrderController.destroy));
 
 module.exports = router;
